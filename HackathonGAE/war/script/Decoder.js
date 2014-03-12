@@ -4,6 +4,7 @@
 var takePicture = document.querySelector("#Take-Picture"), showPicture = document
 		.querySelector("#picture");
 Result = document.querySelector("#decodedValue");
+DecodeError = document.querySelector("#decodeError");
 Canvas = document.createElement("canvas");
 Canvas.width = 640;
 Canvas.height = 480;
@@ -27,7 +28,8 @@ function receiveMessage(e) {
 		location.href = "home.hck?barCode=" + resultArray[0];
 	} else {
 		if (resultArray.length === 0 && workerCount === 0) {
-			Result.value = "Decoding failed.";
+			DecodeError.innerHTML = "Sorry, the captured image cannot be decoded. Please try again."
+			Result.value = "Sorry, the captured image cannot be decoded. Please try again.";
 		}
 	}
 }
@@ -60,7 +62,8 @@ if (takePicture && showPicture) {
 					fileReader.readAsDataURL(file);
 					DecodeBar()
 				} catch (e) {
-					Result.value = "Neither createObjectURL or FileReader are supported";
+					DecodeError.innerHTML = "Sorry, your browser does not support this feature.";
+					Result.value = "Sorry, your browser does not support this feature.";
 				}
 			}
 		}

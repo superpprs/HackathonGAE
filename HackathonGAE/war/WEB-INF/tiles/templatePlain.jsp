@@ -12,8 +12,11 @@
 <link
 	href="http://www.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css"
 	rel="stylesheet" />
+<link href="style/jquery.mobile-1.4.2.min.css"	rel="stylesheet" />
+<link rel="stylesheet"  href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
 <!--[if lte IE 8]><script src="js/html5shiv.js" type="text/javascript"></script><![endif]-->
 <script src="script/jquery-1.10.1.min.js"></script>
+<script src="script/jquery.mobile-1.4.2.min.js"></script>
 <script src="script/config-plain.js"></script>
 <script src="script/skel.min.js"></script>
 <script src="script/skel-panels.min.js"></script>
