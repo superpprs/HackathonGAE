@@ -14,6 +14,8 @@
 	<context:annotation-config />
 	<!-- Package scanning for auto-wiring starts -->
 	<context:component-scan base-package="com.TCSNielsen.Hackathon.controller" />
+	<context:component-scan base-package="com.TCSNielsen.Hackathon.service" />
+	<context:component-scan base-package="com.TCSNielsen.Hackathon.service.Interface" />
 	<!-- Package scanning for auto-wiring ends -->
 	<!-- Configuration for the tiles view resolver. -->
 	<bean id="tilesViewResolver"

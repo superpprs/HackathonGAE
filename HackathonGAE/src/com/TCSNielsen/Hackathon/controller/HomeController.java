@@ -1,12 +1,18 @@
 package com.TCSNielsen.Hackathon.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.TCSNielsen.Hackathon.domain.ProductDetails;
+import com.TCSNielsen.Hackathon.service.Interface.IMarketResearch;
 
 /**
  * Controller class to handle the request and response related to the general
@@ -17,6 +23,9 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class HomeController extends BaseController {
+	
+	@Autowired
+	IMarketResearch marketResearch;
 
 	/**
 	 * Method to handle the requests to the login screen.
@@ -30,7 +39,7 @@ public class HomeController extends BaseController {
 	 */
 	@RequestMapping("/home.hck")
 	public ModelAndView displayLoginPage(
-			@RequestParam(required=false) String barCode,
+			@RequestParam(required = false) String barCode,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		LOGGER.debug("Entering into displayLoginPage method in the HomeController class");
@@ -39,6 +48,11 @@ public class HomeController extends BaseController {
 			mav.addObject("barCodeValue", barCode);
 		}
 		mav.setViewName("home");
+		List<ProductDetails> productDetails = marketResearch.getUpcCode("KELLOGG%"); //Map request param here..
+		mav.addObject("UPC", productDetails); // For further manipulations..
+		ProductDetails detail = marketResearch.getProductDescription("0038000219610"); // Modify the UPC code here..
+		mav.addObject("productDetail", detail); // Further manipulations..
+		
 		LOGGER.debug("Exit from displayLoginPage method in the HomeController class");
 		return mav;
 	}

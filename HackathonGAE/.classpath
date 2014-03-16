@@ -52,5 +52,8 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-endpoints-deps.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-endpoints.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-jsr107cache-1.9.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jackson-annotations-2.2.3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jackson-core-2.2.3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jackson-databind-2.2.3.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
