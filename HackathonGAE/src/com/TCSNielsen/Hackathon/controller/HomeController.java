@@ -67,12 +67,12 @@ public class HomeController extends BaseController {
 	 * @return - Model And View containing the home page details.
 	 * @throws Exception
 	 */
-	@RequestMapping("/productSearch.hck")
-	public ModelAndView productSearch(HttpServletRequest request,
+	@RequestMapping("/search.hck")
+	public ModelAndView search(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		LOGGER.debug("Entering into productSearch method in the HomeController class");
+		LOGGER.debug("Entering into search method in the HomeController class");
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("productSearch");
+		mav.setViewName("search");
 		LOGGER.debug("Exit from displayHomePage method in the HomeController class");
 		return mav;
 	}
